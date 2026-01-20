@@ -1,0 +1,165 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #0b0d0e;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+.headerSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.textInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.profileImage {
+  width: 200px;
+  height: 350px;
+  position: relative;
+  margin-top: 10%;
+  border-radius: 10px;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: "doto";
+  margin: 0;
+  background-color: #9ca3af;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "figtree";
+  color: #9ca3af;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-family: "figtree";
+  max-width: 900px;
+  width: 100%;
+}
+
+.techSection {
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 2rem;
+  overflow: hidden; /* Hide overflow for marquee */
+}
+
+.techTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #9ca3af;
+  font-family: "figtree";
+  margin-bottom: 1rem;
+}
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+/* Calendar Styles */
+.calendarContainer {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.calendarNote {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.techIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  /* background-color: rgba(255, 255, 255, 0.1); REMOVED BG */
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+  min-width: 60px; /* Ensure fixed width for smooth scroll calculations if needed */
+}
+
+.techIcon:hover {
+  transform: scale(1.2);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(
+      -50%
+    ); /* Move half way because we will duplicate content */
+  }
+}
