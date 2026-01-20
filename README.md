@@ -2,9 +2,6 @@
 
 Welcome to my personal portfolio! I am a **Frontend Developer** specializing in building fast, responsive, and clean user interfaces using **React.js**. This project showcases my skills, experience, and the projects I've built.
 
-![Portfolio Preview](public/logo512.png)
-_(Note: Replace `public/logo512.png` with a screenshot of your portfolio if available)_
-
 ## 🚀 About Me
 
 > "I focus on writing code that can grow and stay easy to maintain. The code improves the user experience."
