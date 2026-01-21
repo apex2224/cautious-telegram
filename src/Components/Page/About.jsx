@@ -35,10 +35,7 @@ const About = () => {
             fontSize={16}
           />
         </div>
-        <p className={styles.calendarNote}>
-          * To see all work, please enable "Private contributions" in your
-          GitHub profile settings.
-        </p>
+
         <section className={styles.techSection}>
           <h2 className={styles.techTitle}>Technologies</h2>
           <div className={styles.marqueeContainer}>
@@ -65,7 +62,6 @@ const About = () => {
                 // Duplicate for infinite scroll
                 { Icon: SiJavascript, color: "#F7DF1E", title: "JavaScript" },
                 { Icon: FaReact, color: "#61DAFB", title: "React" },
-                { Icon: SiNextdotjs, color: "#ffffff", title: "Next.js" },
                 { Icon: SiNextdotjs, color: "#ffffff", title: "Next.js" },
                 {
                   Icon: VscVscode,

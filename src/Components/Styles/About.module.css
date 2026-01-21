@@ -163,3 +163,49 @@
     ); /* Move half way because we will duplicate content */
   }
 }
+
+@media (max-width: 768px) {
+  .headerSection {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .textInfo {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .name {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .about {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .profileImage {
+    margin-top: 0;
+    width: 180px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .techSection {
+    margin-top: 2rem;
+  }
+}
