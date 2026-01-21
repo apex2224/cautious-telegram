@@ -9,6 +9,7 @@ import {
   SiFirebase,
   SiNextdotjs,
   SiJavascript,
+  SiRedux,
 } from "react-icons/si";
 import { FaReact, FaGithub, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
@@ -44,6 +45,7 @@ const About = () => {
                 { Icon: SiJavascript, color: "#F7DF1E", title: "JavaScript" },
                 { Icon: FaReact, color: "#61DAFB", title: "React" },
                 { Icon: SiNextdotjs, color: "#ffffff", title: "Next.js" },
+                { Icon: SiRedux, color: "#ffffff", title: "Redux" },
                 {
                   Icon: VscVscode,
                   color: "#007ACC",
@@ -63,6 +65,7 @@ const About = () => {
                 { Icon: SiJavascript, color: "#F7DF1E", title: "JavaScript" },
                 { Icon: FaReact, color: "#61DAFB", title: "React" },
                 { Icon: SiNextdotjs, color: "#ffffff", title: "Next.js" },
+                { Icon: SiRedux, color: "#76007cff", title: "Redux" },
                 {
                   Icon: VscVscode,
                   color: "#007ACC",
