@@ -37,6 +37,14 @@ const projects = [
     size: "",
     link: "https://www.ziiontechnology.in/",
   },
+  {
+    title: "ElectionIQ",
+    description:
+      "Empowering your vote with real-time AI insights, interactive guides, and civic clarity. Experience the next generation of democratic engagement..",
+    tech: ["React", "State Management", "Modern UI", "Tailwind CSS"],
+    size: "span2",
+    link: "https://testing-f5157.web.app/",
+  },
 ];
 
 const data = {
