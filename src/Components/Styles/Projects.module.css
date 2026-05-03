@@ -1,178 +1,240 @@
-/* Projects Bento Grid Styling */
+/* =============================================
+   Projects — Pinterest / Masonry Layout
+   ============================================= */
 
 .container {
   padding: 4rem 2rem;
   color: #fff;
   font-family: "Figtree", sans-serif;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
+/* Header */
 .header {
   margin-bottom: 3rem;
-  text-align: center;
 }
 
 .title {
   font-size: 3rem;
   font-weight: 800;
-  font-family: "figtree", sans-serif;
+  font-family: "Figtree", sans-serif;
   text-align: left;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   color: #9ca3af;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: 1.1rem;
-  color: #9ca3af;
+  font-size: 1rem;
+  color: #4b5563;
   text-align: left;
 }
 
-/* Bento Grid */
+/* ---- Pinterest / Masonry Grid ---- */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 250px;
-  gap: 1.5rem;
+  columns: 3 300px;          /* 3 columns, each min 300px */
+  column-gap: 1.25rem;
 }
 
-/* Base Card Style */
+/* ---- Card Base ---- */
 .card {
-  background: #111315;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 1.5rem;
+  background: #0e1012;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 1.75rem 1.75rem 1.5rem;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s ease;
+  gap: 1rem;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease,
+    transform 0.25s ease;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+
+  /* Masonry — each card is a column item */
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(96, 165, 250, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow: 0 20px 50px -14px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
-/* Grid Spans for Bento Effect */
-.span2 {
-  grid-column: span 2;
+/* Accent glow blob */
+.glow {
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.09;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 0;
 }
 
-.rowSpan2 {
-  grid-row: span 2;
+.card:hover .glow {
+  opacity: 0.22;
 }
 
-/* Content inside Card */
+/* ---- Card Content ---- */
 .cardContent {
-  z-index: 2;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+/* Number badge */
+.numBadge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #374151;
+  font-family: "Figtree", monospace;
+  text-transform: uppercase;
 }
 
 .cardTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 800;
   font-family: "Doto", sans-serif;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .cardDesc {
-  font-size: 0.95rem;
+  font-size: 0.84rem;
+  color: #6b7280;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---- Highlights list ---- */
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.8rem;
   color: #9ca3af;
   line-height: 1.5;
-  margin-bottom: 1rem;
 }
 
+.checkIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Divider between desc & tech */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 0;
+}
+
+/* ---- Tech Tags ---- */
 .techStack {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
-  margin-top: auto;
-}
-
-.techTag {
-  font-size: 0.75rem;
-  padding: 0.3rem 0.6rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  color: #d1d5db;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.cardImage {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.1; /* Subtle background image */
-  transition:
-    opacity 0.3s ease,
-    transform 0.5s ease;
   z-index: 1;
 }
 
-.card:hover .cardImage {
-  opacity: 0.2;
-  transform: scale(1.05);
+.techTag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid;
+  letter-spacing: 0.03em;
+  transition: background 0.2s;
 }
 
+.card:hover .techTag {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* ---- Arrow icon ---- */
 .arrow {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  color: #60a5fa;
+  top: 1.4rem;
+  right: 1.4rem;
+  color: #374151;
   opacity: 0;
-  transform: translate(-10px, 10px);
+  transform: translate(-5px, 5px);
   transition: all 0.3s ease;
+  z-index: 2;
 }
 
 .card:hover .arrow {
   opacity: 1;
   transform: translate(0, 0);
+  color: #9ca3af;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
+/* ---- Hackathon badge (optional slot) ---- */
+.hackBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f472b6;
+  background: rgba(244, 114, 182, 0.08);
+  border: 1px solid rgba(244, 114, 182, 0.2);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  width: fit-content;
+}
+
+/* =============================================
+   Mobile Responsiveness
+   ============================================= */
+@media (max-width: 900px) {
+  .grid {
+    columns: 2 260px;
+  }
+}
+
+@media (max-width: 560px) {
   .container {
     padding: 2rem 1rem;
   }
 
-  .header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
   .title {
+    font-size: 2.2rem;
     text-align: center;
-    font-size: 2.5rem;
   }
 
   .subtitle {
     text-align: center;
-    font-size: 1rem;
   }
 
-  .span2 {
-    grid-column: span 1;
-  }
-
-  .rowSpan2 {
-    grid-row: span 1;
+  .header {
+    text-align: center;
   }
 
   .grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto; /* Let content define height on mobile */
-    gap: 1rem;
-  }
-
-  .card {
-    min-height: 250px;
+    columns: 1;
   }
 }
