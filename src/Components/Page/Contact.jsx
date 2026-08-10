@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
-import Resume from "../../Assets/RohitResume.pdf";
+import Resume from "../../Assets/Rohit-SalooriaResume.pdf";
 
 const Contact = () => {
   return (
